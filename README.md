@@ -7,6 +7,7 @@ To implement  Encoder 8 To 3 in Dataflow Modelling using verilog and validating 
 **SOFTWARE REQUIRED:** Quartus prime
 
 **THEORY**
+An encoder is a combinational circuit that reduces multiple inputs into a smaller number of outputs. It performs the reverse operation of a decoder. An 8-to-3 encoder converts eight inputs (D₀ to D₇) into a 3-bit binary output (Y₂, Y₁, Y₀). Only one of the inputs is assumed to be active (logic HIGH) at any given time.
 
 **Encoder 8 To 3**
 
@@ -35,22 +36,40 @@ Logical circuit of the above expressions is given below:
 Figure 02  Encoder 8 * 3
 
 **Procedure**
-
-/* write all the steps invloved */
-
+Understand Functionality:
+Inputs: D₀ to D₇ (8 lines), Outputs: Y₂, Y₁, Y₀ (3 lines).
+One input HIGH produces a 3-bit binary output.
+Derive Logic Equations
+Open Quartus:
+Create a new project named Encoder8to3.
+Add a Verilog file.
+Write Verilog Code
+Use ModelSim or Quartus Waveform Viewer to verify results.
 **PROGRAM**
 
 /* Program for Encoder 8 To 3 in Dataflow Modelling and verify its truth table in quartus using Verilog programming. 
 
-Developed by: RegisterNumber:
+Developed by:Avanthika.B RegisterNumber:24900424
 */
-
+```
+module binary_encoder(
+  input [7:0] D,
+  output [2:0] y);
+  assign y[2] = D[4] | D[5] | D[6] | D[7];
+  assign y[1] = D[2] | D[3] | D[6] | D[7];
+  assign y[0] = D[1] | D[3] | D[5] | D[7];
+endmodule
+```
 **RTL LOGIC FOR Encoder 8 To 3 in Dataflow Modelling**
+
+![image](https://github.com/user-attachments/assets/9c2c35c7-24d8-48f1-b852-9e4eb1a9e6f9)
 
 **TIMING DIGRAMS FOR Encoder 8 To 3 in Dataflow Modelling**
 
-**RESULTS**
+![ep 5 1](https://github.com/user-attachments/assets/9f38d0eb-93e2-43d6-abe8-f0511f840018)
 
+**RESULTS**
+The Encoder 8 To 3 in Dataflow Modelling using verilog is implemented and validated their functionality using their functional tables.
 
 
 
